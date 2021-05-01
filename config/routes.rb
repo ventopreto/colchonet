@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
-  resources :rooms
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+  LOCALES = /en|pt\-BR/
+    scope "(:locale)" , :locale => /en|pt\-BR/ do
+    resources :rooms
+    resources :users
+  
+    resource :user_confirmation, :only => [:show]
+    end
+  
+    get '/:locale' => 'home#index' , :locale => LOCALES
+    root :to => "home#index"
+    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  end
+  
