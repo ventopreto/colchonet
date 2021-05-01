@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def home 
-    
+  def index
+     @rooms = Room.limit(3)    
   end
 end
