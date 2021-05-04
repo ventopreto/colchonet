@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_080454) do
+ActiveRecord::Schema.define(version: 2021_05_04_092858) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "title"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_05_01_080454) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "confirmed_at"
+    t.string "confirmation_token"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
