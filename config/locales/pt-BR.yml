@@ -12,6 +12,12 @@ pt-BR:
     confirmation:
       sucess: Email confirmado com sucesso, obrigado!
 
+  user_sessions:
+      new:
+        title: 'Login'
+        sign_up: 'Cadastre-se'
+
+
   links:
     back: Voltar
     
@@ -48,5 +54,23 @@ pt-BR:
         title: Titulo
         location: Localização
         description: Descrição
+
+
+
+  activerecord:
+    models:
+      user_session: 
+  attributes:
+      password: 'Senha'
+      email: 'Email'
+
+  helpers:
+    submit:
+      user_session:
+        create: 'Entrar'
+        submit: Salvar %{model}
+        update: Atualizar %{model}
+
+
 
 
